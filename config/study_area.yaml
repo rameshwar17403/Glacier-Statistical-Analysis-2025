@@ -1,0 +1,54 @@
+# Study Area and Satellite Sensor Configuration for 2025 Multi-Satellite Glacier Analysis
+glacier:
+  name: "Gangotri Glacier"
+  region: "RGI 14 - South Asia West (Garhwal Himalaya, Uttarakhand, India)"
+  coordinates:
+    bbox: [79.05, 30.80, 79.30, 31.05] # [min_lon, min_lat, max_lon, max_lat]
+    center: [79.175, 30.925]
+    utm_zone: "44N"
+    crs: "EPSG:4326"
+
+datasets:
+  sentinel2:
+    id: "NASA/HLS/HLSS30/v002"
+    name: "Sentinel-2 MSI Harmonized (HLSS30)"
+    resolution: 30 # meters
+    bands:
+      blue: "B02"
+      green: "B03"
+      red: "B04"
+      nir: "B8A"
+      swir1: "B11"
+      swir2: "B12"
+      qa: "Fmask"
+
+  landsat:
+    id: "NASA/HLS/HLSL30/v002"
+    name: "Landsat 8/9 OLI Harmonized (HLSL30)"
+    resolution: 30 # meters
+    bands:
+      blue: "B02"
+      green: "B03"
+      red: "B04"
+      nir: "B05"
+      swir1: "B06"
+      swir2: "B07"
+      qa: "Fmask"
+
+temporal:
+  year: 2025
+  ablation_season:
+    start_date: "2025-08-01"
+    end_date: "2025-10-31"
+  cloud_threshold_percent: 25
+
+segmentation:
+  ndsi_threshold: 0.40
+  nir_threshold: 0.11 # minimum NIR reflectance to prevent shadow/water confusion
+  slope_threshold_deg: 45
+  pixel_resolution_m: 30.0
+
+analysis:
+  significance_level: 0.05
+  bootstrap_iterations: 1000
+  confidence_interval: 0.95

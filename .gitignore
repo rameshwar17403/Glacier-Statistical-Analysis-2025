@@ -1,0 +1,44 @@
+# Virtual environments
+venv/
+env/
+.venv/
+ENV/
+
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.ipynb_checkpoints/
+
+# macOS / OS artifacts
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+Thumbs.db
+
+# Secrets, Credentials & Local Environment configs
+.env
+.env.*
+*credentials*
+*service_account*.json
+*.pem
+*.key
+*.token
+
+# Large raster dumps / Temporary archives
+*.tif
+*.tiff
+*.tar.gz
+*.zip
+*.h5
+*.nc
+
+# Streamlit temporary state
+.streamlit/secrets.toml
+
+# IDE settings
+.vscode/
+.idea/
